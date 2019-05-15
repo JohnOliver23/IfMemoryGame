@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">IFMemoryGame</string>
+    <string name="title_activity_main_menu">MainActivityMenu</string>
 </resources>

@@ -9,42 +9,38 @@
         tools:context=".MainActivity">
 
     <LinearLayout
-            android:paddingTop="10dp"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="8"
+            android:layout_weight="5"
             android:gravity="center"
-            android:orientation="vertical"
-            android:layout_margin="30dp">
-
-        <ImageView android:layout_width="wrap_content"
-                   android:layout_height="match_parent"
-                   android:src="@drawable/ic_action_alarm"
-        />
-
-        <Chronometer
-                android:id="@+id/view_timer"
-                android:textSize="20sp"
-                android:textStyle="bold"
-                tools:targetApi="1"
-                android:paddingLeft="2dp"
-                android:paddingTop="6dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+        <TextView
+                android:text="IF Memory Game"
+                android:textSize="20pt"
                 android:layout_width="wrap_content"
-                android:layout_height="match_parent"/>
+                android:layout_height="wrap_content"/>
 
     </LinearLayout>
-
     <LinearLayout
+            android:layout_weight="1"
+            android:gravity="center"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_weight="1">
-        <GridView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:id="@+id/gridView"
-            android:numColumns="4"
-            android:stretchMode="columnWidth">
-        </GridView>
-    </LinearLayout>
+            android:orientation="vertical">
+        <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Play"
+                android:id="@+id/btnPlay"/>
+        <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Teachers"
+                android:id="@+id/btnList"/>
+        <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Ranking"
+                android:id="@+id/btnRanking"/>
 
+    </LinearLayout>
 </LinearLayout>

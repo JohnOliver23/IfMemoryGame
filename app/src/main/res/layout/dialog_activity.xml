@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="300dp"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+    <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:background="@color/colorPrimary">
+        <ImageView
+                android:layout_width="88dp"
+                android:layout_height="98dp"
+                android:background="@drawable/sucesso"
+
+                android:layout_centerInParent="true"/>
+
+    </RelativeLayout>
+
+    <TextView android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:text="Congratulations !"
+              android:paddingLeft="50dp"
+              android:textStyle="bold"
+              android:textSize="20sp"
+              android:layout_marginTop="30dp"
+              android:layout_marginLeft="20dp"
+              android:textColor="@color/colorPrimary"/>
+    <LinearLayout
+            android:layout_weight="5"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+    <TextView android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:text="Time :"
+              android:textStyle="bold"
+              android:textColor="@color/black"
+              android:textSize="18dp"
+              android:id="@+id/lbl_timer"
+              android:layout_margin="20dp"/>
+
+    <TextView android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:text="00:57"
+              android:textStyle="bold"
+              android:textColor="@color/gray"
+              android:textSize="20dp"
+              android:paddingLeft="85dp"
+              android:id="@+id/txt_timer"
+              android:layout_margin="20dp"/>
+    </LinearLayout>
+
+    <LinearLayout
+            android:layout_weight="5"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        <TextView android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:text="Attempts :"
+                  android:textStyle="bold"
+                  android:textColor="@color/black"
+                  android:textSize="18dp"
+                  android:id="@+id/lbl_attempts"
+                  android:layout_margin="20dp"/>
+
+        <TextView android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:text="35"
+                  android:textStyle="bold"
+                  android:textColor="@color/gray"
+                  android:textSize="20dp"
+                  android:paddingLeft="80dp"
+                  android:id="@+id/txt_attempts"
+                  android:layout_margin="20dp"/>
+    </LinearLayout>
+
+    <LinearLayout
+            android:layout_weight="3"
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+        <Button
+                android:id="@+id/btnOk"
+                android:text="Ok"
+                android:background="#32CD32"
+                android:layout_margin="20dp"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+        <Button
+                android:id="@+id/btnCancel"
+                android:text="Cancel"
+                android:textStyle="bold"
+                android:background="#ff33"
+                android:textColor="@color/white"
+                android:layout_width="wrap_content"
+                android:layout_margin="20dp"
+                android:layout_height="wrap_content"/>
+
+    </LinearLayout>
+
+
+</LinearLayout>

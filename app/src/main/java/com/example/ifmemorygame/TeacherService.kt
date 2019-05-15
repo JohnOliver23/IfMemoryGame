@@ -7,12 +7,14 @@ import retrofit2.Call
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.http.GET
+import retrofit2.http.Query
+
 const val BASE_URL = "http://apiprofessoresifpbtsi.herokuapp.com/"
 
 interface TeacherService {
 
     @GET("professores")
-    fun list(): Call<TeacherList>
+    fun list(@Query("page") page: Int): Call<TeacherList>
 
     companion object{
         operator fun invoke () : TeacherService {
