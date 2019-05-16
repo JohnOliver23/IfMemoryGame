@@ -31,6 +31,10 @@ class MainListActivity : AppCompatActivity() {
         teacherListAux = ArrayList<Teacher>()
         this.teachersLv = findViewById(R.id.lvTeachers)
 
+        supportActionBar!!.title = "List Teachers"
+        supportActionBar!!.setDisplayHomeAsUpEnabled(true)
+        //supportActionBar!!.setDisplayHomeAsUpEnabled(true)
+
 
 
         var page = 1
@@ -58,6 +62,11 @@ class MainListActivity : AppCompatActivity() {
 
     }
 
+    override fun onSupportNavigateUp(): Boolean {
+        onBackPressed()
+        return true
+    }
+
     inner class TeachersAdapter : BaseAdapter {
         var listTeachers = ArrayList<Teacher>()
         var context: Context?=null
@@ -71,7 +80,7 @@ class MainListActivity : AppCompatActivity() {
             var myTeacher = listTeachers[position]
             myView.nameTv.text = myTeacher.nome
             myView.descriptionTv.text = myTeacher.frasemarcante
-            Picasso.with(this.context).load(myTeacher.foto).transform(CropCircleTransformation()).into(myView.imgFoto)
+            Picasso.with(this.context).load(myTeacher.foto).resize(170,170).transform(CropCircleTransformation()).into(myView.imgFoto)
             return myView
         }
 

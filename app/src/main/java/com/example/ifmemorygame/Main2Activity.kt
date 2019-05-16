@@ -30,6 +30,9 @@ class Main2Activity : AppCompatActivity() {
     private lateinit var txt_attempts : TextView
     private lateinit var btnOkDialog: Button
     private lateinit var btnCancelDialog: Button
+    private var hitLastGame = false
+    private var firstCard : ImageView?= null
+    private var secondCard : ImageView?=null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -77,33 +80,41 @@ class Main2Activity : AppCompatActivity() {
         var imgAdapter = ImageAdapter(this)
         gridView.adapter = (imgAdapter)
         gridView.setOnItemClickListener { parent, view, position, id ->
-            view as ImageView
-            Picasso.with(this).load(dadosfotos[pos[position]])
-                .transform(RoundedCornersTransformation(10, 10)).into(view)
-            val handler = Handler()
             if(currentPos < 0){
+                if(!hitLastGame){
+                    firstCard?.setImageResource(R.drawable.hidden)
+                    secondCard?.setImageResource(R.drawable.hidden)
+                    hitLastGame = false
+                }
                 currentPos = position
-                curView = view as ImageView
+                firstCard = view as ImageView
+                Picasso.with(this).load(dadosfotos[pos[position]])
+                    .transform(RoundedCornersTransformation(10, 10)).into(view)
             }else {
                 if(currentPos == position){
-                    jogadaAtual = 1
+                    Toast.makeText(this@Main2Activity, "search other card",Toast.LENGTH_SHORT).show()
 
                 }else if(pos[currentPos]!=pos[position]){
                     view as ImageView
-                    curView.setImageResource(R.drawable.hidden)
-                    handler.postDelayed({
-                        Picasso.with(this).load(R.drawable.hidden).into(view)
-                    }, 1000)
-                    jogadaAtual = 2
+                    Picasso.with(this).load(dadosfotos[pos[position]])
+                        .transform(RoundedCornersTransformation(10, 10)).into(view)
+                    currentPos = -1
+                    hitLastGame = false
+                    secondCard = view
+                    countTentatives++
+                    txt_tent.setText(countTentatives.toString())
                 }else {
                     view as ImageView
                     Picasso.with(this).load(dadosfotos[pos[position]])
                         .transform(RoundedCornersTransformation(10, 10)).into(view)
                     countPair++;
-                    view.setClickable(true)
-                    curView.setClickable(true)
-                    Log.i("APP_TESTADOR","foii")
-                    jogadaAtual = 2
+                    currentPos = -1
+                    hitLastGame = true
+                    secondCard = view
+                    firstCard?.setClickable(true)
+                    secondCard?.setClickable(true)
+                    countTentatives++
+                    txt_tent.setText(countTentatives.toString())
                     if(countPair == 8){
                         view_timer.stop()
                         myDialog = Dialog(this)
@@ -129,11 +140,6 @@ class Main2Activity : AppCompatActivity() {
                         myDialog.show()
 
                     }
-                }
-                if(jogadaAtual!=1){
-                    countTentatives++
-                    txt_tent.setText(countTentatives.toString())
-                    currentPos = -1
                 }
             }
 
