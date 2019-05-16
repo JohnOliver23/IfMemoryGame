@@ -37,6 +37,8 @@ class MainActivity : AppCompatActivity() {
 
     }
     fun list (view : View){
+        var intent = Intent(this, MainListActivity::class.java)
+        startActivity(intent)
 
     }
 
