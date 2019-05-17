@@ -89,8 +89,8 @@ class Main2Activity : AppCompatActivity() {
         gridView.setOnItemClickListener { parent, view, position, id ->
             if(currentPos < 0){
                 if(!hitLastGame){
-                    firstCard?.setImageResource(R.drawable.hidden)
-                    secondCard?.setImageResource(R.drawable.hidden)
+                    firstCard?.setImageResource(R.drawable.hiddeny)
+                    secondCard?.setImageResource(R.drawable.hiddeny)
                     hitLastGame = false
                 }
                 currentPos = position
@@ -207,11 +207,11 @@ class Main2Activity : AppCompatActivity() {
                 imgView.setLayoutParams(lp)
                 imgView.setPadding(10, 10, 0, 10)
                 imgView.setScaleType(ImageView.ScaleType.FIT_XY)
-                imgView.setImageResource(R.drawable.hidden)
+                imgView.setImageResource(R.drawable.hiddeny)
 
             }else{
                 imgView =  convertView as ImageView
-                imgView.setImageResource(R.drawable.hidden)
+                imgView.setImageResource(R.drawable.hiddeny)
 
             }
             return imgView
