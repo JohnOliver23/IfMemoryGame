@@ -9,26 +9,29 @@
             android:layout_width="match_parent"
             android:layout_height="100dp"
             android:background="@color/colorPrimary">
-        <ImageView
-                android:layout_width="88dp"
-                android:layout_height="98dp"
-                android:background="@drawable/sucesso"
-
-                android:layout_centerInParent="true"/>
+        <TextView android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:text="You Win !"
+                  android:paddingLeft="20dp"
+                  android:textStyle="bold"
+                  android:textSize="50sp"
+                  android:layout_marginTop="30dp"
+                  android:layout_marginLeft="20dp"
+                  android:textColor="@color/white"/>
 
     </RelativeLayout>
 
-    <TextView android:layout_width="wrap_content"
-              android:layout_height="wrap_content"
-              android:text="Congratulations !"
-              android:paddingLeft="50dp"
-              android:textStyle="bold"
-              android:textSize="20sp"
-              android:layout_marginTop="30dp"
-              android:layout_marginLeft="20dp"
-              android:textColor="@color/colorPrimary"/>
+    <ImageView android:layout_width="168dp"
+               android:layout_height="113dp"
+               android:src="@drawable/star"
+               android:paddingLeft="50dp"
+               android:textStyle="bold"
+               android:textSize="20sp"
+               android:layout_gravity="center"
+               android:layout_marginRight="30dp"
+               android:layout_centerHorizontal="true"/>
     <LinearLayout
-            android:layout_weight="5"
+            android:layout_weight="6"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
@@ -39,7 +42,7 @@
               android:textColor="@color/black"
               android:textSize="18dp"
               android:id="@+id/lbl_timer"
-              android:layout_margin="20dp"/>
+              android:layout_marginLeft="20dp"/>
 
     <TextView android:layout_width="wrap_content"
               android:layout_height="wrap_content"
@@ -49,11 +52,11 @@
               android:textSize="20dp"
               android:paddingLeft="85dp"
               android:id="@+id/txt_timer"
-              android:layout_margin="20dp"/>
+              android:layout_marginLeft="20dp"/>
     </LinearLayout>
 
     <LinearLayout
-            android:layout_weight="5"
+            android:layout_weight="6"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
@@ -64,7 +67,7 @@
                   android:textColor="@color/black"
                   android:textSize="18dp"
                   android:id="@+id/lbl_attempts"
-                  android:layout_margin="20dp"/>
+                  android:layout_marginLeft="20dp"/>
 
         <TextView android:layout_width="wrap_content"
                   android:layout_height="wrap_content"
@@ -74,7 +77,7 @@
                   android:textSize="20dp"
                   android:paddingLeft="80dp"
                   android:id="@+id/txt_attempts"
-                  android:layout_margin="20dp"/>
+                  android:layout_marginLeft="20dp" />
     </LinearLayout>
 
     <LinearLayout
@@ -91,6 +94,7 @@
                 android:singleLine="true"
                 android:padding="10dp"
                 android:textStyle="bold"
+                android:layout_marginLeft="12dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"/>
     </LinearLayout>

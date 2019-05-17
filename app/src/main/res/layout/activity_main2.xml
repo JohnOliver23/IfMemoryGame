@@ -9,48 +9,38 @@
         android:background="@drawable/background"
         tools:context=".Main2Activity">
     <LinearLayout
-            android:paddingTop="10dp"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_weight="8"
+            android:layout_weight="4"
             android:orientation="horizontal"
-            android:layout_margin="10dp">
+            android:layout_margin="10dp"
+            >
 
-        <ImageView android:layout_width="wrap_content"
-                   android:layout_height="wrap_content"
-                   android:src="@drawable/ic_action_alarm"
-                   android:paddingTop="7dp"
-                   android:layout_marginLeft="40dp"
-        />
+
+
 
 
         <Chronometer
                 android:id="@+id/view_timer"
                 android:textSize="20sp"
                 android:textStyle="bold"
-                android:paddingLeft="2dp"
-                android:paddingTop="3dp"
+                android:paddingLeft="30dp"
+                android:paddingTop="38dp"
                 tools:targetApi="1"
-
+                android:textColor="@color/white"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
+                android:layout_height="wrap_content"
+                />
 
-        <TextView android:layout_width="wrap_content"
-                  android:layout_height="wrap_content"
-                  android:textSize="20dp"
-                  android:text="Tentativas : "
-                  android:textStyle="bold"
-                  android:textColor="#000"
-                  android:layout_marginLeft="50dp"
-                  android:id="@+id/lbl_tent"
-        />
-        <TextView android:layout_width="wrap_content"
+
+        <TextView android:layout_width="305dp"
                   android:layout_height="wrap_content"
                   android:textSize="20dp"
                   android:text="0"
                   android:textStyle="bold"
-                  android:textColor="#000"
+                  android:textColor="#ffffff"
                   android:id="@+id/txt_tent"
+                  android:paddingLeft="180dp"
         />
 
     </LinearLayout>

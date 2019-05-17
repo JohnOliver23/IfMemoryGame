@@ -2,6 +2,7 @@ package com.example.ifmemorygame
 
 import android.app.Dialog
 import android.content.Context
+import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
@@ -42,6 +43,9 @@ class Main2Activity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main2)
+
+        val actionBar = supportActionBar
+        actionBar!!.hide()
 
         userDao = UserDao(this)
 
@@ -142,7 +146,10 @@ class Main2Activity : AppCompatActivity() {
                         this.btnOkDialog.setOnClickListener({
                             var name = nameEt.text.toString()
                             userDao.insert(User(name,time, resultTents))
+                            var intent = Intent(this, MainRankingActivity::class.java)
+                            startActivity(intent)
                             myDialog.cancel()
+                            finish()
                         })
                         this.btnCancelDialog.setOnClickListener({
                             Toast.makeText(this,"you canceled", Toast.LENGTH_LONG).show()
