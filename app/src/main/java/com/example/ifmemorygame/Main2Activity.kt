@@ -12,7 +12,9 @@ import android.view.View
 import android.view.ViewGroup
 import android.view.Window
 import android.widget.*
+import com.example.ifmemorygame.DAO.UserDao
 import com.example.ifmemorygame.model.TeacherList
+import com.example.ifmemorygame.model.User
 import com.squareup.picasso.Picasso
 import jp.wasabeef.picasso.transformations.RoundedCornersTransformation
 import retrofit2.Call
@@ -30,13 +32,18 @@ class Main2Activity : AppCompatActivity() {
     private lateinit var txt_attempts : TextView
     private lateinit var btnOkDialog: Button
     private lateinit var btnCancelDialog: Button
+    private lateinit var nameEt: TextView
+    private lateinit var userDao : UserDao
     private var hitLastGame = false
     private var firstCard : ImageView?= null
     private var secondCard : ImageView?=null
 
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main2)
+
+        userDao = UserDao(this)
 
         view_timer = findViewById(R.id.view_timer)
         txt_tent = findViewById(R.id.txt_tent)
@@ -123,14 +130,18 @@ class Main2Activity : AppCompatActivity() {
                         myDialog.setTitle("My first dialog box")
                         txt_attempts = myDialog.findViewById(R.id.txt_attempts)
                         txt_timer = myDialog.findViewById(R.id.txt_timer)
-                        txt_timer.setText(view_timer.text.toString())
+                        var time = view_timer.text.toString()
+                        txt_timer.setText(time)
                         var resultTents = txt_tent.text.toString().toInt() +1
+
                         txt_attempts.setText(resultTents.toString())
 
+                        this.nameEt = myDialog.findViewById(R.id.nameEt)
                         this.btnOkDialog = myDialog.findViewById(R.id.btnOk)
                         this.btnCancelDialog = myDialog.findViewById(R.id.btnCancel)
                         this.btnOkDialog.setOnClickListener({
-                            Toast.makeText(this,"you confirmed", Toast.LENGTH_LONG).show()
+                            var name = nameEt.text.toString()
+                            userDao.insert(User(name,time, resultTents))
                             myDialog.cancel()
                         })
                         this.btnCancelDialog.setOnClickListener({

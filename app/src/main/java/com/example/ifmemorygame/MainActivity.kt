@@ -9,9 +9,9 @@ import android.content.Intent
 
 
 class MainActivity : AppCompatActivity() {
-    private lateinit var btnPlay : Button
-    private lateinit var btnList : Button
-    private lateinit var btnRanking: Button
+    private lateinit var btnPlay : ImageButton
+    private lateinit var btnList : ImageButton
+    private lateinit var btnRanking: ImageButton
 
 
 
@@ -20,8 +20,11 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        val actionBar = supportActionBar
+        actionBar!!.hide()
+
         this.btnPlay = findViewById(R.id.btnPlay)
-        this.btnList = findViewById(R.id.btnList)
+        this.btnList = findViewById(R.id.btnTeachers)
         this.btnRanking = findViewById(R.id.btnRanking)
 
         this.btnPlay.setOnClickListener({ play(it) })
@@ -43,6 +46,8 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun ranking (view: View) {
+        var intent = Intent(this, MainRankingActivity::class.java)
+        startActivity(intent)
 
     }
 

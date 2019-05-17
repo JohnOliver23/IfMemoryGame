@@ -6,6 +6,8 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
+
+        android:background="@drawable/layout"
         tools:context=".MainActivity">
 
     <LinearLayout
@@ -13,11 +15,7 @@
             android:gravity="center"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
-        <TextView
-                android:text="IF Memory Game"
-                android:textSize="20pt"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
+
 
     </LinearLayout>
     <LinearLayout
@@ -25,22 +23,31 @@
             android:gravity="center"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="vertical">
-        <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Play"
+            android:orientation="vertical"
+            android:paddingTop="180dp"
+            android:paddingLeft="30dp">
+        <ImageButton
+                android:layout_width="220dp"
+                android:layout_height="100dp"
+                android:src="@drawable/play"
+                android:scaleType="fitXY"
+                android:background="#00000000"
                 android:id="@+id/btnPlay"/>
-        <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Teachers"
-                android:id="@+id/btnList"/>
-        <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Ranking"
+        <ImageButton
+                android:layout_width="220dp"
+                android:layout_height="100dp"
+                android:src="@drawable/teachers"
+                android:scaleType="fitXY"
+                android:background="#00000000"
+                android:id="@+id/btnTeachers"/>
+        <ImageButton
+                android:layout_width="220dp"
+                android:layout_height="100dp"
+                android:src="@drawable/ranking"
+                android:scaleType="fitXY"
+                android:background="#00000000"
                 android:id="@+id/btnRanking"/>
+
 
     </LinearLayout>
 </LinearLayout>
